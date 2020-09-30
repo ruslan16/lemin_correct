@@ -6,13 +6,13 @@
 /*   By: sirvin <sirvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 20:44:50 by sirvin            #+#    #+#             */
-/*   Updated: 2020/09/26 23:29:16 by sirvin           ###   ########.fr       */
+/*   Updated: 2020/09/30 17:04:10 by sirvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/lemin.h"
 
-int	will_continue(char **line)
+int			will_continue(char **line)
 {
 	read_line(line);
 	if (!ft_strlen(*line))
@@ -23,7 +23,7 @@ int	will_continue(char **line)
 	return (1);
 }
 
-int	get_index(char *name, t_map *map)
+int			get_index(char *name, t_map *map)
 {
 	int		i;
 	char	**names;
@@ -56,7 +56,7 @@ void		pars_links_t(t_map **map, char *line)
 	free_double(split);
 }
 
-void	pars_links(t_map **map, char *str, int *start, int *end)
+void		pars_links(t_map **map, char *str, int *start, int *end)
 {
 	char	*line;
 

@@ -6,16 +6,16 @@
 /*   By: sirvin <sirvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 20:42:01 by sirvin            #+#    #+#             */
-/*   Updated: 2020/09/26 21:14:21 by sirvin           ###   ########.fr       */
+/*   Updated: 2020/09/30 17:04:10 by sirvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/lemin.h"
 
-int	*get_rooms(int n)
+int			*get_rooms(int n)
 {
-	int	*tr;
-	int	i;
+	int		*tr;
+	int		i;
 
 	tr = (int *)malloc(sizeof(int) * n);
 	i = 0;
@@ -52,7 +52,7 @@ void		room_list_to_array(t_map **map, int *start, int *end)
 	*end = m->num_of_rooms - (1 + *end);
 }
 
-void	create_start_end(int *start, int *end, int i, int *mode)
+void		create_start_end(int *start, int *end, int i, int *mode)
 {
 	if (*mode == 1)
 		*start = i;
@@ -61,7 +61,7 @@ void	create_start_end(int *start, int *end, int i, int *mode)
 	*mode = 0;
 }
 
-int	create_room(t_map *map, char *line)
+int			create_room(t_map *map, char *line)
 {
 	char	**split;
 
@@ -70,13 +70,13 @@ int	create_room(t_map *map, char *line)
 	send_error(!split[1] || !split[2] || split[3]);
 	free(line);
 	ft_lstadd(&(map->room_name_list), ft_lstnew(split[0],
-											 ft_strlen(split[0]) + 1));
+											ft_strlen(split[0]) + 1));
 	free_double(split);
 	map->num_of_rooms++;
 	return (map->num_of_rooms - 1);
 }
 
-void	pars_rooms(t_map **map, int *start, int *end)
+void		pars_rooms(t_map **map, int *start, int *end)
 {
 	char	*line;
 	int		flag;

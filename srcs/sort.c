@@ -6,13 +6,13 @@
 /*   By: sirvin <sirvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 22:11:39 by sirvin            #+#    #+#             */
-/*   Updated: 2020/09/26 22:18:03 by sirvin           ###   ########.fr       */
+/*   Updated: 2020/09/30 17:04:10 by sirvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/lemin.h"
 
-int	compare(t_list **paths_arr, int i, int j)
+int			compare(t_list **paths_arr, int i, int j)
 {
 	size_t	first;
 	size_t	second;
@@ -22,7 +22,7 @@ int	compare(t_list **paths_arr, int i, int j)
 	return (first < second);
 }
 
-void	combine(t_list **paths_arr, int s, int m, int e)
+void		combine(t_list **paths_arr, int s, int m, int e)
 {
 	t_list	**temp;
 	int		i;
@@ -48,9 +48,9 @@ void	combine(t_list **paths_arr, int s, int m, int e)
 	free(temp);
 }
 
-void	merge_sort(t_list **paths_arr, int s, int e)
+void		merge_sort(t_list **paths_arr, int s, int e)
 {
-	int	m;
+	int		m;
 
 	if (s < e)
 	{

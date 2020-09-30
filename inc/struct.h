@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 
 #ifndef LEM_IN_STRUCT_H
-#define LEM_IN_STRUCT_H
+# define LEM_IN_STRUCT_H
 
-#include "lemin.h"
+# include "lemin.h"
 
 typedef struct	s_map
 {

@@ -6,13 +6,13 @@
 /*   By: sirvin <sirvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 21:27:13 by sirvin            #+#    #+#             */
-/*   Updated: 2020/09/26 21:30:23 by sirvin           ###   ########.fr       */
+/*   Updated: 2020/09/30 17:04:10 by sirvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/lemin.h"
 
-void	push(t_queue *queue, t_list *ta)
+void		push(t_queue *queue, t_list *ta)
 {
 	ta->next = NULL;
 	if (is_empty(queue))
@@ -27,8 +27,8 @@ void	push(t_queue *queue, t_list *ta)
 	}
 }
 
-void	remove_ste_connections(t_queue *paths, t_map *map, int start,
-							   int end)
+void		remove_ste_connections(t_queue *paths, t_map *map, int start,
+							int end)
 {
 	t_list	*ta;
 	t_list	*wrapper;
@@ -48,7 +48,7 @@ void	remove_ste_connections(t_queue *paths, t_map *map, int start,
 	}
 }
 
-t_queue	*queue(void)
+t_queue		*queue(void)
 {
 	t_queue	*tr;
 
@@ -71,7 +71,7 @@ t_list		*search_path(t_map *map, int start, int end)
 	room_pointers = (int *)malloc(sizeof(int) * map->num_of_rooms);
 	get_room_pointers(room_pointers, map);
 	while ((ta = get_augmenting_path(map, start, end, room_pointers))
-		   != NULL)
+	!= NULL)
 	{
 		push(paths, ta);
 		remove_visited(map, start);
@@ -95,7 +95,6 @@ void		algo(int ants, int start, int end, t_map *map)
 	send_error(!paths);
 	sort_paths(&paths);
 	find_path_capacity(paths, ants);
-	//write_paths_file(paths, rooms);
 	ant_list = NULL;
 	can_continue = 1;
 	ants_left = ants;
@@ -105,7 +104,7 @@ void		algo(int ants, int start, int end, t_map *map)
 		if (ant_list && can_continue)
 			ft_putchar('\n');
 		can_continue = add_ants(paths, &ant_list, ants, &ants_left)
-					   || can_continue;
+				|| can_continue;
 	}
 	ft_lstdel(&paths, &delete_paths);
 	ft_lstdel(&ant_list, &delete_info);

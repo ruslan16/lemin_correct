@@ -6,13 +6,13 @@
 /*   By: sirvin <sirvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 22:26:10 by sirvin            #+#    #+#             */
-/*   Updated: 2020/09/26 22:31:28 by sirvin           ###   ########.fr       */
+/*   Updated: 2020/09/30 17:04:10 by sirvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/lemin.h"
 
-int	add_ants(t_list *paths, t_list **ant_list, int ants, int *ants_left)
+int			add_ants(t_list *paths, t_list **ant_list, int ants, int *ants_left)
 {
 	t_list	*i;
 	t_ant	*ta;
@@ -40,7 +40,7 @@ int	add_ants(t_list *paths, t_list **ant_list, int ants, int *ants_left)
 	return (tr);
 }
 
-void	print_ant(t_ant *ant, t_map *map)
+void		print_ant(t_ant *ant, t_map *map)
 {
 	int		n;
 	int		*room_pointer;
@@ -56,7 +56,7 @@ void	print_ant(t_ant *ant, t_map *map)
 	ft_putchar(' ');
 }
 
-void	move_ants(t_list **ants, t_map *map, int *can_continue)
+void		move_ants(t_list **ants, t_map *map, int *can_continue)
 {
 	t_list	*i;
 	t_ant	*current;

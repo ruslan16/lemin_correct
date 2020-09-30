@@ -6,7 +6,7 @@
 /*   By: sirvin <sirvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 20:37:03 by sirvin            #+#    #+#             */
-/*   Updated: 2020/09/26 23:40:27 by sirvin           ###   ########.fr       */
+/*   Updated: 2020/09/30 17:04:10 by sirvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_list		*new_list(int i)
 	return (tr);
 }
 
-void	read_line(char **line)
+void		read_line(char **line)
 {
 	char	*l;
 
@@ -45,7 +45,7 @@ void	read_line(char **line)
 	}
 }
 
-int	get_ants(void)
+int			get_ants(void)
 {
 	char	*line;
 	int		tr;
@@ -57,7 +57,7 @@ int	get_ants(void)
 	return (tr);
 }
 
-int main()
+int			main(void)
 {
 	t_map	*map;
 	int		ants;
@@ -69,28 +69,6 @@ int main()
 	start = -1;
 	end = -1;
 	pars_rooms(&map, &start, &end);
-	int i;
-	int j;
-	i = 0;
-	j = 0;
-	/*while (i < map->num_of_rooms)
-	{
-		printf("%d - %s\n", i, map->room_names[i]);
-		i++;
-	}
-	i = 0;
-	while (i < map->num_of_rooms)
-	{
-		printf("%d\n", i);
-		while (j < map->num_of_rooms)
-		{
-			printf("%d", map->paths[i][j]);
-			j++;
-		}
-		i++;
-		j = 0;
-		printf("\n");
-	}*/
 	algo(ants, start, end, map);
 	free_map(map);
 	return (0);

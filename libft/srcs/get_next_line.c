@@ -6,12 +6,12 @@
 /*   By: etristan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 17:59:42 by etristan          #+#    #+#             */
-/*   Updated: 2020/09/24 14:57:20 by sirvin           ###   ########.fr       */
+/*   Updated: 2020/09/30 17:07:00 by sirvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
-# define BUFF_SIZE 1
+#define BUFF_SIZE 1
 
 static size_t	new_line_index(char *str, int *has_nl)
 {
@@ -54,7 +54,7 @@ static int		rot_leftover(char **leftover, char **line, char *tr)
 	nli = new_line_index(*leftover, &has_nl);
 	if (has_nl)
 		new_leftover = ft_strsub(*leftover, nli + 1,
-								 ft_strlen(*leftover) - nli);
+								ft_strlen(*leftover) - nli);
 	else
 		new_leftover = ft_strnew(0);
 	free(*leftover);
@@ -64,7 +64,7 @@ static int		rot_leftover(char **leftover, char **line, char *tr)
 }
 
 static int		add_to_leftover(char **leftover, char *buffer, int c,
-								  size_t t)
+								size_t t)
 {
 	char	*new_leftover;
 	size_t	nli;
@@ -78,7 +78,7 @@ static int		add_to_leftover(char **leftover, char *buffer, int c,
 	nli = new_line_index(buffer, &has_nl);
 	if (has_nl && c)
 		new_leftover = ft_strsub(buffer, nli + 1,
-								 ft_strlen(buffer) - nli);
+								ft_strlen(buffer) - nli);
 	else
 		new_leftover = ft_strnew(0);
 	free(*leftover);
@@ -111,4 +111,3 @@ int				get_next_line(const int fd, char **line)
 	*line = tr;
 	return (add_to_leftover(&leftover[fd], buffer, c, ft_strlen(tr)));
 }
-

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef LEM_IN_LEMIN_H
-#define LEM_IN_LEMIN_H
+# define LEM_IN_LEMIN_H
 
 # include "../libft/includes/libft.h"
 # include "../libft/includes/get_next_line.h"
@@ -33,7 +33,7 @@ int				is_empty(t_queue *queue);
 void			get_room_pointers(int *room_pointers, t_map *map);
 void			push(t_queue *queue, t_list *ta);
 t_list			*get_augmenting_path(t_map *map, int start, int end,
-								   int *room_pointers);
+							int *room_pointers);
 int				pop_to_visit(t_queue *to_visit);
 int				gfp(int *p);
 t_list			*get_connecting_rooms(int visiting, t_map *map, int end);
@@ -46,7 +46,8 @@ void			find_path_capacity(t_list *paths, int ants);
 
 void			move_ants(t_list **ants, t_map *map, int *can_continue);
 void			print_ant(t_ant *ant, t_map *map);
-int				add_ants(t_list *paths, t_list **ant_list, int ants, int *ants_left);
+int				add_ants(t_list *paths, t_list **ant_list,
+				int ants, int *ants_left);
 
 void			free_double(char **str);
 int				will_continue(char **line);

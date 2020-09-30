@@ -6,15 +6,15 @@
 /*   By: sirvin <sirvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 22:01:29 by sirvin            #+#    #+#             */
-/*   Updated: 2020/09/26 22:11:36 by sirvin           ###   ########.fr       */
+/*   Updated: 2020/09/30 17:04:10 by sirvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/lemin.h"
 
-void	remove_visited(t_map *map, int start)
+void		remove_visited(t_map *map, int start)
 {
-	int	i;
+	int		i;
 
 	i = 0;
 	while (i < map->num_of_rooms)
@@ -30,7 +30,7 @@ void		visit(int visiting, t_map *map)
 	map->paths[visiting][visiting] = map->paths[visiting][visiting] | 1;
 }
 
-t_list	*get_connecting_rooms(int visiting, t_map *map, int end)
+t_list		*get_connecting_rooms(int visiting, t_map *map, int end)
 {
 	t_list	*room_list;
 	int		i;
@@ -52,7 +52,7 @@ t_list	*get_connecting_rooms(int visiting, t_map *map, int end)
 	return (room_list);
 }
 
-t_list	*pop(t_queue *queue)
+t_list		*pop(t_queue *queue)
 {
 	t_list	*tr;
 
@@ -65,7 +65,7 @@ t_list	*pop(t_queue *queue)
 	return (tr);
 }
 
-int		pop_to_visit(t_queue *to_visit)
+int			pop_to_visit(t_queue *to_visit)
 {
 	t_list	*val;
 	int		tr;
